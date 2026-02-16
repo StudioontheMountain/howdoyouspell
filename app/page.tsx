@@ -4,12 +4,6 @@ import { useState, useCallback } from "react"
 import Link from "next/link"
 import { SPELLING_WORDS } from "@/lib/spelling-data"
 
-    >
-      <div className="text-center py-3">
-      </div>
-    </div>
-  )
-}
 
 function BookmarkIcon({ filled }: { filled: boolean }) {
   return (
