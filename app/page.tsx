@@ -96,7 +96,7 @@ export default function HomePage() {
 
           {/* Input field */}
           <div className="max-w-md mx-auto">
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <input
                 type="text"
                 value={input}
@@ -115,7 +115,7 @@ export default function HomePage() {
               <button
                 onClick={() => handleCheck()}
                 disabled={loading}
-                className="px-6 py-3 bg-stone-900 text-white text-lg font-semibold rounded-xl hover:bg-stone-800 active:bg-stone-700 transition-colors disabled:opacity-50"
+                className="w-full sm:w-auto px-6 py-3 bg-stone-900 text-white text-lg font-semibold rounded-xl hover:bg-stone-800 active:bg-stone-700 transition-colors disabled:opacity-50"
               >
                 {loading ? "..." : "Spell it"}
               </button>
