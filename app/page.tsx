@@ -4,10 +4,6 @@ import { useState, useCallback } from "react"
 import Link from "next/link"
 import { SPELLING_WORDS } from "@/lib/spelling-data"
 
-function AdUnit({ slot, className = "" }: { slot: string; className?: string }) {
-  return (
-    <div
-      className={`bg-stone-100 border border-dashed border-stone-300 rounded-lg flex items-center justify-center text-stone-400 text-sm ${className}`}
     >
       <div className="text-center py-3">
         <p className="font-medium">Ad Unit {slot}</p>
@@ -85,8 +81,7 @@ export default function HomePage() {
       <main className="max-w-3xl mx-auto px-4">
         {/* Ad Unit 1 - Leaderboard below header */}
         <div className="py-4">
-          <AdUnit slot="1" className="w-full h-[90px]" />
-        </div>
+</div>
 
         {/* The Tool */}
         <section className="py-8 md:py-16">
@@ -201,8 +196,7 @@ export default function HomePage() {
 
         {/* Ad Unit 2 - Rectangle in content */}
         <div className="py-4 flex justify-center">
-          <AdUnit slot="2" className="w-[300px] h-[250px]" />
-        </div>
+</div>
 
         {/* All 50 Words - SEO Internal Links */}
         <section className="py-12 border-t border-stone-100">
@@ -234,8 +228,7 @@ export default function HomePage() {
 
         {/* Ad Unit 3 - Bottom leaderboard */}
         <div className="py-4">
-          <AdUnit slot="3" className="w-full h-[90px]" />
-        </div>
+</div>
 
         {/* SEO Footer Content */}
         <footer className="py-8 border-t border-stone-100">

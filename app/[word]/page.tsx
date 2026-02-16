@@ -105,16 +105,6 @@ function JsonLd({ entry }: { entry: NonNullable<ReturnType<typeof getWordBySlug>
   )
 }
 
-function AdUnit({ slot, className = "" }: { slot: string; className?: string }) {
-  return (
-    <div className={`bg-stone-100 border border-dashed border-stone-300 rounded-lg flex items-center justify-center text-stone-400 text-sm ${className}`}>
-      <div className="text-center py-3">
-        <p className="font-medium">Ad Unit {slot}</p>
-        <p className="text-xs text-stone-300">Google AdSense / Playwire</p>
-      </div>
-    </div>
-  )
-}
 
 function DifficultyBadge({ level }: { level: "easy" | "medium" | "hard" }) {
   const colors = {
@@ -160,8 +150,7 @@ export default async function WordPage({
       </header>
 
       <div className="max-w-3xl mx-auto px-4 pt-4">
-        <AdUnit slot="Leaderboard" className="h-[90px]" />
-      </div>
+</div>
 
       <main className="max-w-3xl mx-auto px-4 py-8">
         <nav aria-label="Breadcrumb" className="mb-6">
@@ -236,10 +225,7 @@ export default async function WordPage({
               <p className="text-stone-700 italic">{entry.example}</p>
             </blockquote>
           </section>
-
-          <AdUnit slot="Rectangle" className="h-[250px] mb-8" />
-
-          <section className="mb-8">
+<section className="mb-8">
             <h2 className="text-lg font-bold text-stone-900 mb-4">Frequently Asked Questions</h2>
             <div className="space-y-4">
               <details className="group border border-stone-200 rounded-xl" open>
@@ -292,9 +278,7 @@ export default async function WordPage({
             </div>
           </section>
         </article>
-
-        <AdUnit slot="Bottom Leaderboard" className="h-[90px]" />
-      </main>
+</main>
 
       <footer className="border-t border-stone-200 bg-stone-50 mt-12">
         <div className="max-w-3xl mx-auto px-4 py-6">
