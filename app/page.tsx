@@ -6,8 +6,6 @@ import { SPELLING_WORDS } from "@/lib/spelling-data"
 
     >
       <div className="text-center py-3">
-        <p className="font-medium">Ad Unit {slot}</p>
-        <p className="text-xs text-stone-300">Google AdSense / Playwire</p>
       </div>
     </div>
   )
@@ -79,9 +77,6 @@ export default function HomePage() {
       </header>
 
       <main className="max-w-3xl mx-auto px-4">
-        {/* Ad Unit 1 - Leaderboard below header */}
-        <div className="py-4">
-</div>
 
         {/* The Tool */}
         <section className="py-8 md:py-16">
@@ -194,9 +189,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Ad Unit 2 - Rectangle in content */}
-        <div className="py-4 flex justify-center">
-</div>
 
         {/* All 50 Words - SEO Internal Links */}
         <section className="py-12 border-t border-stone-100">
@@ -226,9 +218,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Ad Unit 3 - Bottom leaderboard */}
-        <div className="py-4">
-</div>
 
         {/* SEO Footer Content */}
         <footer className="py-8 border-t border-stone-100">
