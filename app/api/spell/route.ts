@@ -379,7 +379,7 @@ export async function GET(request: Request) {
     "accessable": "accessible", "acessible": "accessible",
     "amature": "amateur", "amatuer": "amateur",
     "anonomous": "anonymous", "anonimous": "anonymous",
-    "athiest": "atheist", "athist": "atheist",
+    "athist": "atheist",
     "begining": "beginning", "begginning": "beginning",
     "bizzare": "bizarre", "bizare": "bizarre",
     "camoflage": "camouflage", "camoflague": "camouflage",
