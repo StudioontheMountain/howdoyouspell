@@ -241,7 +241,6 @@ export async function GET(request: Request) {
     "arguement": "argument", "arguemant": "argument",
     "athiest": "atheist",
     "beautifull": "beautiful", "beautifal": "beautiful", "beutiful": "beautiful",
-    "begginning": "beginning",
     "beleive": "believe", "belive": "believe", "beleave": "believe",
     "bizzare": "bizarre", "bizare": "bizarre",
     "calender": "calendar", "calander": "calendar", "calandar": "calendar",
