@@ -383,7 +383,6 @@ export async function GET(request: Request) {
     "desparate": "desperate", "despirate": "desperate",
     "entrepeneur": "entrepreneur", "entreprenur": "entrepreneur",
     "facinate": "fascinate", "fascenate": "fascinate",
-    "greatful": "grateful", "gratefull": "grateful",
     "adaquate": "adequate", "adequete": "adequate",
     "advantagous": "advantageous", "advantageus": "advantageous",
     "anciant": "ancient", "anchient": "ancient",
