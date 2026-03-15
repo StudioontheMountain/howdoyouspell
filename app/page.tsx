@@ -1,6 +1,8 @@
 // @ts-nocheck
 'use client'
 import MoneyBar from '@/components/MoneyBar'
+import { ArticlesSection } from '@/components/ArticleCard'
+import articles from '@/public/articles.json'
 import { useState, useEffect, useRef } from 'react'
 
 export default function HomePage() {
@@ -125,8 +127,9 @@ export default function HomePage() {
         </div>
         {filteredWords.length > 120 && <div style={{ textAlign: 'center', marginTop: 32 }}><a href="/words" style={{ padding: '12px 28px', background: '#fff', border: '0.5px solid #d2d2d7', borderRadius: 20, fontSize: 15, color: '#1d1d1f', textDecoration: 'none' }}>See all {filteredWords.length} words →</a></div>}
       </div>
+      <ArticlesSection articles={articles as any[]} />
       <footer style={{ borderTop: '0.5px solid #d2d2d7', padding: 24, textAlign: 'center', fontSize: 12, color: '#aeaeb2' }}>
-        <div style={{ marginBottom: 10 }}>2026 How Do You Spell · Free spelling reference · US, UK, IE, CA, AU and NZ English</div>
+        <div style={{ marginBottom: 10 }}>{new Date().getFullYear()} How Do You Spell · Free spelling reference · US, UK, IE, CA, AU and NZ English</div>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px 20px' }}>
           <a href="/privacy" style={{ color: '#aeaeb2', textDecoration: 'none' }}>Privacy Policy</a>
           <a href="/terms" style={{ color: '#aeaeb2', textDecoration: 'none' }}>Terms of Service</a>

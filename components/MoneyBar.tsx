@@ -47,7 +47,7 @@ export default function MoneyBar() {
       {status === "done" ? (
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <p style={{ margin: 0, fontSize: "0.9375rem", color: "#34c759", fontWeight: 600, letterSpacing: "-0.01em" }}>
-            ✓ You're on the list — we'll let you know when it drops!
+            ✓ You're on the list — we'll send you spelling tips and updates!
           </p>
           <button
             onClick={() => setDismissed(true)}
@@ -60,8 +60,8 @@ export default function MoneyBar() {
       ) : !open ? (
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem" }}>
           <p style={{ margin: 0, fontSize: "0.9375rem", color: "#3a3a3c", letterSpacing: "-0.01em" }}>
-            <span style={{ fontWeight: 600, color: "#1d1d1f" }}>Like money?</span>{" "}
-            <span style={{ color: "#6e6e73" }}>Get notified when our new money app drops.</span>
+            <span style={{ fontWeight: 600, color: "#1d1d1f" }}>Never misspell a word again.</span>{" "}
+            <span style={{ color: "#6e6e73" }}>Get weekly spelling tips and tricky word pairs in your inbox.</span>
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexShrink: 0 }}>
             <button
@@ -79,7 +79,7 @@ export default function MoneyBar() {
                 whiteSpace: "nowrap",
               }}
             >
-              I like money!
+              I want that!
             </button>
             <button
               onClick={() => setDismissed(true)}
@@ -132,7 +132,7 @@ export default function MoneyBar() {
               whiteSpace: "nowrap",
             }}
           >
-            {status === "loading" ? "Adding…" : "I like money!"}
+            {status === "loading" ? "Adding…" : "I want that!"}
           </button>
           <button
             onClick={() => { setOpen(false); setEmail("") }}
