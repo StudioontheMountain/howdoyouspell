@@ -10,6 +10,7 @@ export default function HomePage() {
   const [allWords, setAllWords] = useState([])
   const [result, setResult] = useState(null)
   const [notFound, setNotFound] = useState(false)
+  const [defaultResult, setDefaultResult] = useState(null)
   const [totalWords, setTotalWords] = useState(2047)
   const inputRef = useRef(null)
 
@@ -17,8 +18,17 @@ export default function HomePage() {
     fetch('/words.json').then(r => r.json()).then(data => {
       setAllWords(data.words)
       setTotalWords(data.totalWords)
+      const def = data.words.find(w => w.word.toLowerCase() === 'accommodate')
+      if (def) setDefaultResult(def)
     })
   }, [])
+
+  // Live search as user types
+  useEffect(() => {
+    if (!query.trim() || allWords.length === 0) return
+    const timer = setTimeout(() => { handleSearch() }, 300)
+    return () => clearTimeout(timer)
+  }, [query, allWords])
 
   useEffect(() => { if (inputRef.current) inputRef.current.focus() }, [])
 
@@ -58,7 +68,8 @@ export default function HomePage() {
 
   const defaultDialects = { us: 'color', uk: 'colour', ie: 'colour', ca: 'colour', au: 'colour', nz: 'colour' }
   const showDefault = !result && !notFound
-  const activeDialects = showDefault ? defaultDialects : (result && result.dialects ? result.dialects : { us: result ? result.word : '', uk: result ? result.word : '', ca: result ? result.word : '', au: result ? result.word : '', nz: result ? result.word : '' })
+  const displayResult = result || (!notFound && !query.trim() ? defaultResult : null)
+  const activeDialects = displayResult && displayResult.dialects ? displayResult.dialects : (showDefault ? defaultDialects : { us: result ? result.word : '', uk: result ? result.word : '', ca: result ? result.word : '', au: result ? result.word : '', nz: result ? result.word : '' })
   const firstLetter = query.trim().toLowerCase().charAt(0)
   const filteredWords = firstLetter ? allWords.filter(w => w.word.toLowerCase().startsWith(firstLetter)) : allWords
   const suggestions = notFound ? allWords.filter(w => w.word.toLowerCase().startsWith(firstLetter)).slice(0, 6) : []
@@ -91,14 +102,14 @@ export default function HomePage() {
             })}
           </div>
         </div>
-        {result && (
+        {displayResult && (
           <div style={{ background: '#fff', borderRadius: 16, border: '0.5px solid #d2d2d7', padding: 24, marginBottom: 24 }}>
-            <h2 style={{ fontSize: 32, fontWeight: 700, margin: '0 0 16px' }}>{result.word}</h2>
-            {result.misspellings && result.misspellings.length > 0 && <div style={{ marginBottom: 14 }}>{result.misspellings.map(m => <span key={m} style={{ display: 'inline-block', margin: '2px 4px', padding: '2px 10px', border: '0.5px solid #ff3b3030', borderRadius: 20, fontSize: 13, textDecoration: 'line-through', color: '#6e6e73' }}>{m}</span>)}</div>}
-            {result.tip && <div style={{ background: '#f5f5f7', borderRadius: 10, padding: '12px 16px', marginBottom: 14, fontSize: 14, lineHeight: 1.6 }}>💡 {result.tip}</div>}
-            {result.example && <blockquote style={{ borderLeft: '3px solid #34c759', margin: '0 0 14px', paddingLeft: 16, fontSize: 15, color: '#3a3a3c', fontStyle: 'italic' }}>{result.example}</blockquote>}
-            {result.commentary && <p style={{ fontSize: 14, lineHeight: 1.7, color: '#6e6e73', margin: 0 }}>{result.commentary}</p>}
-            <a href={'/' + result.slug} style={{ display: 'inline-block', marginTop: 16, fontSize: 14, color: '#0071e3', textDecoration: 'none', fontWeight: 500 }}>Full entry with etymology →</a>
+            <h2 style={{ fontSize: 32, fontWeight: 700, margin: '0 0 16px' }}>{displayResult.word}</h2>
+            {displayResult.misspellings && displayResult.misspellings.length > 0 && <div style={{ marginBottom: 14 }}>{displayResult.misspellings.map(m => <span key={m} style={{ display: 'inline-block', margin: '2px 4px', padding: '2px 10px', border: '0.5px solid #ff3b3030', borderRadius: 20, fontSize: 13, textDecoration: 'line-through', color: '#6e6e73' }}>{m}</span>)}</div>}
+            {displayResult.tip && <div style={{ background: '#f5f5f7', borderRadius: 10, padding: '12px 16px', marginBottom: 14, fontSize: 14, lineHeight: 1.6 }}>💡 {displayResult.tip}</div>}
+            {displayResult.example && <blockquote style={{ borderLeft: '3px solid #34c759', margin: '0 0 14px', paddingLeft: 16, fontSize: 15, color: '#3a3a3c', fontStyle: 'italic' }}>{displayResult.example}</blockquote>}
+            {displayResult.commentary && <p style={{ fontSize: 14, lineHeight: 1.7, color: '#6e6e73', margin: 0 }}>{displayResult.commentary}</p>}
+            <a href={'/' + displayResult.slug} style={{ display: 'inline-block', marginTop: 16, fontSize: 14, color: '#0071e3', textDecoration: 'none', fontWeight: 500 }}>Full entry with etymology →</a>
           </div>
         )}
         {notFound && (
