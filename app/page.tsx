@@ -110,23 +110,7 @@ export default function HomePage() {
         )}
       </div>
 <MoneyBar /> 
-      <div style={{ maxWidth: 1080, margin: '0 auto', padding: '0 24px 80px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 20 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, margin: 0 }}>
-            {firstLetter ? 'Words starting with ' + firstLetter.toUpperCase() : 'Commonly misspelled words'}
-          </h2>
-          <span></span>
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 10 }}>
-          {filteredWords.slice(0, 120).map(word => (
-            <a key={word.slug} href={'/' + word.slug} style={{ background: '#fff', border: '0.5px solid #d2d2d7', borderRadius: 12, padding: '14px 16px', textDecoration: 'none', display: 'block' }}>
-              {word.misspellings && word.misspellings[0] && <div style={{ fontSize: 11, color: '#aeaeb2', textDecoration: 'line-through', marginBottom: 2 }}>{word.misspellings[0]}</div>}
-              <div style={{ fontSize: 15, fontWeight: 600, color: '#1d1d1f' }}>{word.word}</div>
-            </a>
-          ))}
-        </div>
-        {filteredWords.length > 120 && <div style={{ textAlign: 'center', marginTop: 32 }}><a href="/words" style={{ padding: '12px 28px', background: '#fff', border: '0.5px solid #d2d2d7', borderRadius: 20, fontSize: 15, color: '#1d1d1f', textDecoration: 'none' }}>See all {filteredWords.length} words →</a></div>}
-      </div>
+
       <ArticlesSection articles={articles as any[]} />
       <footer style={{ borderTop: '0.5px solid #d2d2d7', padding: 24, textAlign: 'center', fontSize: 12, color: '#aeaeb2' }}>
         <div style={{ marginBottom: 10 }}>{new Date().getFullYear()} How Do You Spell · Free spelling reference · US, UK, IE, CA, AU and NZ English</div>
