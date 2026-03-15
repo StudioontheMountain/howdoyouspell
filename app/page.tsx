@@ -23,10 +23,10 @@ export default function HomePage() {
     })
   }, [])
 
-  // Live search as user types
+  // Live search as user types — wait for 4+ characters
   useEffect(() => {
-    if (!query.trim() || allWords.length === 0) return
-    const timer = setTimeout(() => { handleSearch() }, 300)
+    if (query.trim().length < 4 || allWords.length === 0) return
+    const timer = setTimeout(() => { handleSearch() }, 400)
     return () => clearTimeout(timer)
   }, [query, allWords])
 
@@ -53,7 +53,7 @@ export default function HomePage() {
     if (exact) { setResult(exact); setNotFound(false); return }
 
     // Fuzzy match — find closest word within edit distance 3
-    let best = null, bestDist = 4
+    let best = null, bestDist = 3
     for (const w of allWords) {
       const d = levenshtein(q, w.word.toLowerCase())
       if (d < bestDist) { best = w; bestDist = d }
