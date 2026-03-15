@@ -10,7 +10,6 @@ export default function HomePage() {
   const [allWords, setAllWords] = useState([])
   const [result, setResult] = useState(null)
   const [notFound, setNotFound] = useState(false)
-  const [defaultResult, setDefaultResult] = useState(null)
   const [totalWords, setTotalWords] = useState(2047)
   const inputRef = useRef(null)
 
@@ -18,8 +17,6 @@ export default function HomePage() {
     fetch('/words.json').then(r => r.json()).then(data => {
       setAllWords(data.words)
       setTotalWords(data.totalWords)
-      const def = data.words.find(w => w.word.toLowerCase() === 'accommodate')
-      if (def) setDefaultResult(def)
     })
   }, [])
 
@@ -68,7 +65,7 @@ export default function HomePage() {
 
   const defaultDialects = { us: 'color', uk: 'colour', ie: 'colour', ca: 'colour', au: 'colour', nz: 'colour' }
   const showDefault = !result && !notFound
-  const displayResult = result || (!notFound && !query.trim() ? defaultResult : null)
+  const displayResult = result
   const activeDialects = displayResult && displayResult.dialects ? displayResult.dialects : (showDefault ? defaultDialects : { us: result ? result.word : '', uk: result ? result.word : '', ca: result ? result.word : '', au: result ? result.word : '', nz: result ? result.word : '' })
   const firstLetter = query.trim().toLowerCase().charAt(0)
   const filteredWords = firstLetter ? allWords.filter(w => w.word.toLowerCase().startsWith(firstLetter)) : allWords
@@ -85,7 +82,6 @@ export default function HomePage() {
         <p style={{ textAlign: 'center', color: '#6e6e73', fontSize: 17, marginBottom: 32 }}>Type any word. We will sort it out.</p>
         <div style={{ display: 'flex', gap: 8, marginBottom: 24 }}>
           <input ref={inputRef} value={query} onChange={e => { setQuery(e.target.value); setNotFound(false); setResult(null) }} onKeyDown={e => e.key === 'Enter' && handleSearch()} placeholder="Type any word..." style={{ flex: 1, minWidth: 0, height: 52, borderRadius: 26, border: '1.5px solid #0071e3', padding: '0 20px', fontSize: 17, outline: 'none', background: '#fff' }} />
-          <button onClick={handleSearch} style={{ height: 52, width: 90, borderRadius: 26, background: '#34c759', color: '#fff', border: 'none', fontSize: 15, fontWeight: 600, cursor: 'pointer', flexShrink: 0 }}>Spell it</button>
         </div>
         <div style={{ textAlign: 'center', marginBottom: 16 }}>
           <button onClick={() => { if (navigator.share) { navigator.share({ title: 'How Do You Spell', url: 'https://www.howdoyouspell.app' }) } else { alert('Tip: Add this page to your home screen or bookmarks for quick access!') } }} style={{ background: 'none', border: '0.5px solid #d2d2d7', borderRadius: 20, padding: '7px 18px', fontSize: 13, color: '#6e6e73', cursor: 'pointer' }}>🔖 Keep Me Handy</button>
