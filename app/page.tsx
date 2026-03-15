@@ -110,8 +110,8 @@ export default function HomePage() {
         )}
         {notFound && (
           <div style={{ background: '#fff', borderRadius: 16, border: '0.5px solid #d2d2d7', padding: 24, marginBottom: 24 }}>
-            <p style={{ margin: '0 0 4px', fontWeight: 600, fontSize: 16 }}>🔍 We do not have that word yet</p>
-            <p style={{ margin: '0 0 14px', fontSize: 13, color: '#6e6e73' }}>Our dictionary focuses on commonly misspelled words. If you typed it correctly, it may just not be in our list yet.</p>
+            <p style={{ margin: '0 0 4px', fontWeight: 600, fontSize: 16 }}>✓ Looks correctly spelled to us!</p>
+            <p style={{ margin: '0 0 14px', fontSize: 13, color: '#6e6e73' }}>We don't have a specific entry for this word yet — but if you spelled it the way you think, you're probably right. Check a full dictionary for the complete definition.</p>
             {suggestions.length > 0 && <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>{suggestions.map(s => <a key={s.slug} href={'/' + s.slug} style={{ padding: '6px 14px', background: '#f5f5f7', borderRadius: 20, fontSize: 13, color: '#1d1d1f', textDecoration: 'none', border: '0.5px solid #d2d2d7' }}>{s.word}</a>)}</div>}
           </div>
         )}
