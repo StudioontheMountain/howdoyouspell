@@ -8,7 +8,7 @@ const SITE_NAME = "HowDoYouSpell.app"
 const ARTICLES_PATH = path.join(__dirname, "..", "public", "articles.json")
 
 async function fetchNews() {
-  const url = `https://newsapi.org/v2/everything?q=${TOPIC}&language=en&sortBy=publishedAt&pageSize=5&apiKey=${NEWS_API_KEY}`
+  const url = `https://newsapi.org/v2/everything?q=spelling+grammar+writing+language&language=en&sortBy=publishedAt&pageSize=5&apiKey=${NEWS_API_KEY}`
   const res = await fetch(url)
   const data = await res.json()
   if (!data.articles || data.articles.length === 0) {
@@ -49,7 +49,10 @@ Respond with ONLY a JSON object (no markdown, no backticks):
   })
 
   const data = await res.json()
-  const text = data.content[0].text.trim()
+  if (!data.content || !data.content[0] || !data.content[0].text) {
+    throw new Error("Unexpected API response: " + JSON.stringify(data))
+  }
+  const text = data.content[0].text.trim().replace(/```json|```/g, "")
   return JSON.parse(text)
 }
 
@@ -58,7 +61,7 @@ function slugify(title) {
 }
 
 async function main() {
-  console.log("Fetching insurance news headlines...")
+  console.log("Fetching English language news headlines...")
   const headlines = await fetchNews()
   console.log("Headlines:\n" + headlines)
 
