@@ -24,7 +24,7 @@ jobs:
       - name: Commit and push
         run: |
           git config user.name "Frank"
-          git config user.email "founder@massifmobile.com"
+          git config user.email "support@studioonthemountain.com"
           git add public/articles.json
           git commit -m "Auto-blog: new article $(date +%Y-%m-%d)" || exit 0
           git push
