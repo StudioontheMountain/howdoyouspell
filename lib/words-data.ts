@@ -7,7 +7,7 @@
  *   npm run words
  */
 
-import wordsData from "@/public/words.json"
+import wordsData from "@/lib/words.json"
 
 export type SpellingWord = {
   word: string
