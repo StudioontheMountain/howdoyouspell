@@ -1,6 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "next build",
   "outputDirectory": "out",
-  "cleanUrls": true,
-  "framework": null
+  "cleanUrls": true
 }
