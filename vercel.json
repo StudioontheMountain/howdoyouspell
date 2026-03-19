@@ -1,5 +1,8 @@
 {
   "buildCommand": "next build",
   "outputDirectory": "out",
-  "framework": null
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/:word", "destination": "/:word.html" }
+  ]
 }
