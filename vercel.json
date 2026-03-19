@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "out",
-  "framework": null,
-  "trailingSlash": false
+  "cleanUrls": true,
+  "framework": null
 }

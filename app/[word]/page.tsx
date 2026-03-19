@@ -15,6 +15,7 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ word: slug }))
 }
 
+export const dynamic = 'force-static'
 export const dynamicParams = false
 
 export async function generateMetadata({
