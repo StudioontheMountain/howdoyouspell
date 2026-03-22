@@ -119,6 +119,22 @@ export default function HomePage() {
 <MoneyBar /> 
 
       <ArticlesSection articles={articles as any[]} />
+      <section style={{ maxWidth: 680, margin: "0 auto", padding: "48px 24px" }}>
+        <h2 style={{ fontSize: 28, fontWeight: 700, letterSpacing: -0.5, marginBottom: 32 }}>Frequently Asked Questions</h2>
+        {[
+          { q: "How do you spell a word you've never seen written down?", a: "Take your best shot. Type it the way it sounds and hit Enter. Our fuzzy matching will find what you're looking for even if you're miles off. The English language has been making fools of people for centuries — you're in good company." },
+          { q: "What's the difference between American and British spelling?", a: "Two nations divided by a common language and a few hundred spelling disagreements. Color or colour. Organize or organise. Center or centre. We show all six major English dialects side by side — US, UK, Irish, Canadian, Australian, and New Zealand — so you know exactly which spelling is correct for your audience before you embarrass yourself." },
+          { q: "What are the most commonly misspelled words in English?", a: "The ones that have been humiliating people for generations. Accommodate. Occurrence. Separate. Necessary. Definitely. We cover over 2,000 of the trickiest words in English because the language was clearly designed by a committee that hated consistency." },
+          { q: "Is there a fast way to check spelling without autocorrect mangling it?", a: "Yes. Type the word, hit Enter. No autocorrect, no algorithm deciding it knows better than you, no suggestions you didn't ask for. Just the correct spelling, immediately." },
+          { q: "Why does English have so many spelling exceptions?", a: "Because English spent centuries mugging other languages in dark alleys and stealing their words — Latin, French, Norse, Germanic. Each came with its own spelling rules and nobody bothered to reconcile them. We can't fix the language. We can tell you how to spell it." },
+          { q: "How do I know which spelling is correct for my country?", a: "Pick your flag at the top. US, UK, IE, CA, AU, or NZ. The correct spelling for your region appears instantly alongside the others. No guessing, no embarrassing emails to foreign colleagues." }
+        ].map(({ q, a }, i) => (
+          <div key={i} style={{ borderTop: "0.5px solid #d2d2d7", padding: "20px 0" }}>
+            <h3 style={{ fontSize: 16, fontWeight: 600, margin: "0 0 10px", color: "#1d1d1f" }}>{q}</h3>
+            <p style={{ fontSize: 15, lineHeight: 1.7, color: "#6e6e73", margin: 0 }}>{a}</p>
+          </div>
+        ))}
+      </section>
       <footer style={{ borderTop: '0.5px solid #d2d2d7', padding: 24, paddingBottom: 80, textAlign: 'center', fontSize: 12, color: '#aeaeb2' }}>
         <div style={{ marginBottom: 10 }}>© {new Date().getFullYear()} How Do You Spell · Free spelling reference · US, UK, IE, CA, AU and NZ English</div>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px 20px' }}>

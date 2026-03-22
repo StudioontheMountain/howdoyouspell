@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.howdoyouspell.app"),
   alternates: { canonical: "https://www.howdoyouspell.app" },
   title: {
-    default: "How Do You Spell — Instant Spelling Checker",
+    default: "How Do You Spell — Spell It Right, Right Now",
     template: "%s | How Do You Spell",
   },
   description:
@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     siteName: "How Do You Spell",
     type: "website",
     url: "https://www.howdoyouspell.app",
-    title: "How Do You Spell — Instant Spelling Checker",
+    title: "How Do You Spell — Spell It Right, Right Now",
     description: "Check the correct spelling of any word instantly. Etymology, memory tips, and dialect differences across US, UK, Canadian, Australian, and New Zealand English.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "HowDoYouSpell.app" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "How Do You Spell — Instant Spelling Checker",
+    title: "How Do You Spell — Spell It Right, Right Now",
     description: "Check the correct spelling of any word instantly.",
   },
   robots: {

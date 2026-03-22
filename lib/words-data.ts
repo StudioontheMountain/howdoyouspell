@@ -27,6 +27,7 @@ export type SpellingWord = {
   monthlySearches: string | null
   hasFullData: boolean
   hasCommentary: boolean
+  hint?: string | null
 }
 
 export const WORDS: SpellingWord[] = wordsData.words as SpellingWord[]
