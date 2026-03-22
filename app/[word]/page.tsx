@@ -30,7 +30,10 @@ export async function generateMetadata({
   const displayWord = entry.word.charAt(0).toUpperCase() + entry.word.slice(1)
   // Richer title — includes misspelling vs correct spelling pattern for CTR
   const topMisspelling = entry.misspellings?.[0]
-  const title = topMisspelling
+  const hint = entry.hint
+  const title = hint
+    ? `How Do You Spell ${displayWord}? ${hint}`
+    : topMisspelling
     ? `${topMisspelling} or ${entry.word}? How to Spell ${displayWord}`
     : `How Do You Spell ${displayWord}? Correct Spelling & Examples`
   const description = entry.hasFullData
