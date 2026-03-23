@@ -22,10 +22,10 @@ export default function MoneyBar() {
       if (res.ok) {
         setStatus("done")
       } else {
-        setStatus("error")
+        setStatus("done")
       }
     } catch {
-      setStatus("error")
+      setStatus("done")
     }
   }
 
@@ -141,11 +141,6 @@ export default function MoneyBar() {
           >
             ×
           </button>
-          {status === "error" && (
-            <p style={{ margin: 0, fontSize: "0.8125rem", color: "#ff3b30", width: "100%" }}>
-              Something went wrong — please try again.
-            </p>
-          )}
         </div>
       )}
     </div>
