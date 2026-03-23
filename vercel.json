@@ -1,8 +1,5 @@
 {
   "buildCommand": "next build",
-  "outputDirectory": "out",
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/:word", "destination": "/:word.html" }
-  ]
+  "outputDirectory": ".next",
+  "cleanUrls": true
 }
