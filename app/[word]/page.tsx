@@ -56,11 +56,11 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://www.howdoyouspell.app/${entry.slug}`,
+      url: `https://www.howdoyouspell.app/${entry.slug}/`,
       type: "article",
     },
     twitter: { card: "summary", title, description },
-    alternates: { canonical: `https://www.howdoyouspell.app/${entry.slug}` },
+    alternates: { canonical: `https://www.howdoyouspell.app/${entry.slug}/` },
   }
 }
 
@@ -74,7 +74,7 @@ function JsonLd({ entry }: { entry: NonNullable<ReturnType<typeof getWordBySlug>
       "@type": "DefinedTerm",
       name: entry.word,
       description: entry.commentary ?? `The correct spelling of "${entry.word}".`,
-      url: `https://www.howdoyouspell.app/${entry.slug}`,
+      url: `https://www.howdoyouspell.app/${entry.slug}/`,
       inDefinedTermSet: {
         "@type": "DefinedTermSet",
         name: "English Spelling Reference",
@@ -104,7 +104,7 @@ function JsonLd({ entry }: { entry: NonNullable<ReturnType<typeof getWordBySlug>
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://www.howdoyouspell.app" },
-        { "@type": "ListItem", position: 2, name: displayWord, item: `https://www.howdoyouspell.app/${entry.slug}` },
+        { "@type": "ListItem", position: 2, name: displayWord, item: `https://www.howdoyouspell.app/${entry.slug}/` },
       ],
     },
   ]
