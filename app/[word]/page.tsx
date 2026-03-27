@@ -310,7 +310,7 @@ export default async function WordPage({ params }: { params: Promise<{ word: str
               </h2>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
                 {related.map((r) => (
-                  <Link key={r.slug} href={`/${r.slug}`} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.875rem 1rem", background: "#fff", border: "0.5px solid #d2d2d7", borderRadius: 12, textDecoration: "none", fontSize: "0.9375rem", fontWeight: 500, color: "#1d1d1f", letterSpacing: "-0.01em" }}>
+                  <Link key={r.slug} href={`/${r.slug}/`} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.875rem 1rem", background: "#fff", border: "0.5px solid #d2d2d7", borderRadius: 12, textDecoration: "none", fontSize: "0.9375rem", fontWeight: 500, color: "#1d1d1f", letterSpacing: "-0.01em" }}>
                     {r.word} <span style={{ color: "#aeaeb2" }}>→</span>
                   </Link>
                 ))}
@@ -326,7 +326,7 @@ export default async function WordPage({ params }: { params: Promise<{ word: str
               </h2>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
                 {relatedCommentary.map((r) => (
-                  <Link key={r.slug} href={`/${r.slug}`} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.875rem 1rem", background: "#fff", border: "0.5px solid #d2d2d7", borderRadius: 12, textDecoration: "none", fontSize: "0.9375rem", fontWeight: 500, color: "#1d1d1f", letterSpacing: "-0.01em" }}>
+                  <Link key={r.slug} href={`/${r.slug}/`} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.875rem 1rem", background: "#fff", border: "0.5px solid #d2d2d7", borderRadius: 12, textDecoration: "none", fontSize: "0.9375rem", fontWeight: 500, color: "#1d1d1f", letterSpacing: "-0.01em" }}>
                     {r.word} <span style={{ color: "#aeaeb2" }}>→</span>
                   </Link>
                 ))}
