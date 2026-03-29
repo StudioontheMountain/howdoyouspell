@@ -1,7 +1,5 @@
 import { ImageResponse } from 'next/og'
 import { getAllSlugs } from '@/lib/words-data'
-import * as fs from 'fs'
-import * as path from 'path'
 
 export const dynamic = 'force-static'
 export const alt = 'How Do You Spell'
@@ -17,16 +15,12 @@ export default async function Image({ params }: { params: Promise<{ word: string
   const word = slug.replace(/-/g, ' ')
   const displayWord = word.charAt(0).toUpperCase() + word.slice(1)
   const firstLetter = word.charAt(0).toUpperCase()
-
-  const letterPath = path.join(process.cwd(), 'public', 'letters', `${firstLetter}.png`)
-  const letterData = fs.readFileSync(letterPath)
-  const letterBase64 = `data:image/png;base64,${letterData.toString('base64')}`
+  const letterUrl = `https://www.howdoyouspell.app/letters/${firstLetter}.png`
 
   return new ImageResponse(
     (
       <div style={{ width: '1200px', height: '630px', background: '#000000', display: 'flex', flexDirection: 'row' }}>
         
-        {/* Left */}
         <div style={{ width: '700px', display: 'flex', flexDirection: 'column', padding: '60px 40px 60px 80px' }}>
           <div style={{ display: 'flex', fontSize: '18px', fontWeight: 'bold', color: '#6e6e73', letterSpacing: '6px', marginBottom: '40px' }}>
             HOW DO YOU SPELL
@@ -37,19 +31,4 @@ export default async function Image({ params }: { params: Promise<{ word: string
           <div style={{ display: 'flex', fontSize: '28px', color: '#30d158', fontWeight: 'bold' }}>
             Correct spelling
           </div>
-          <div style={{ flex: 1 }} />
-          <div style={{ display: 'flex', fontSize: '18px', color: '#3a3a3c' }}>
-            howdoyouspell.app
-          </div>
-        </div>
-
-        {/* Right — explicit 500x500 container */}
-        <div style={{ width: '500px', height: '630px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img src={letterBase64} style={{ width: '500px', height: '500px', display: 'flex' }} />
-        </div>
-
-      </div>
-    ),
-    { ...size }
-  )
-}
+          <div style={{ f
