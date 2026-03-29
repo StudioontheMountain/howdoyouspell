@@ -1,5 +1,7 @@
 import { ImageResponse } from 'next/og'
 import { getAllSlugs } from '@/lib/words-data'
+import * as fs from 'fs'
+import * as path from 'path'
 
 export const dynamic = 'force-static'
 export const alt = 'How Do You Spell'
@@ -16,26 +18,38 @@ export default async function Image({ params }: { params: Promise<{ word: string
   const displayWord = word.charAt(0).toUpperCase() + word.slice(1)
   const firstLetter = word.charAt(0).toUpperCase()
 
+  // Load the neon letter PNG
+  const letterPath = path.join(process.cwd(), 'public', 'letters', `${firstLetter}.png`)
+  const letterData = fs.readFileSync(letterPath)
+  const letterBase64 = `data:image/png;base64,${letterData.toString('base64')}`
+
   return new ImageResponse(
     (
-      <div style={{ width: '1200px', height: '630px', background: '#f5f5f7', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', padding: '80px 100px', fontFamily: '-apple-system, Helvetica Neue, Arial, sans-serif', position: 'relative' }}>
-        <div style={{ fontSize: '22px', fontWeight: '600', color: '#6e6e73', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '32px', display: 'flex' }}>
-          HOW DO YOU SPELL
-        </div>
-        <div style={{ fontSize: '110px', fontWeight: '700', color: '#1d1d1f', letterSpacing: '-0.04em', lineHeight: '1', marginBottom: '32px', display: 'flex', maxWidth: '900px' }}>
-          {displayWord}
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <div style={{ background: '#34c759', borderRadius: '100px', padding: '10px 24px', fontSize: '22px', fontWeight: '600', color: '#fff', display: 'flex' }}>
-            Correct spelling
+      <div style={{ width: '1200px', height: '630px', background: '#000000', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '60px 80px' }}>
+        
+        {/* Top — brand + neon letter side by side */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+          <img src={letterBase64} width={100} height={100} style={{ display: 'flex' }} />
+          <div style={{ display: 'flex', fontSize: '22px', fontWeight: 'bold', color: '#6e6e73', letterSpacing: '6px' }}>
+            HOW DO YOU SPELL
           </div>
         </div>
-        <div style={{ position: 'absolute', bottom: '60px', right: '100px', fontSize: '20px', color: '#aeaeb2', fontWeight: '500', display: 'flex' }}>
+
+        {/* Middle — the word */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          <div style={{ display: 'flex', fontSize: '108px', fontWeight: 'bold', color: '#f5f5f7', letterSpacing: '-3px', lineHeight: '1' }}>
+            {displayWord}
+          </div>
+          <div style={{ display: 'flex', fontSize: '28px', color: '#30d158', fontWeight: 'bold' }}>
+            ✓  Correct spelling
+          </div>
+        </div>
+
+        {/* Bottom — url */}
+        <div style={{ display: 'flex', fontSize: '20px', color: '#3a3a3c' }}>
           howdoyouspell.app
         </div>
-        <div style={{ position: 'absolute', right: '60px', top: '50%', fontSize: '380px', fontWeight: '700', color: '#e8e8ed', letterSpacing: '-0.04em', lineHeight: '1', display: 'flex' }}>
-          {firstLetter}
-        </div>
+
       </div>
     ),
     { ...size }
