@@ -1,6 +1,12 @@
 import { ImageResponse } from 'next/og'
 
+import { getAllSlugs } from '@/lib/words-data'
+
 export const dynamic = 'force-static'
+
+export async function generateStaticParams() {
+  return getAllSlugs().map((slug) => ({ word: slug }))
+}
 export const alt = 'How Do You Spell'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
