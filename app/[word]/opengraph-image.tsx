@@ -28,7 +28,7 @@ export default async function Image({ params }: { params: Promise<{ word: string
           <div style={{ display: 'flex', fontSize: '18px', color: '#3a3a3c' }}>howdoyouspell.app</div>
         </div>
         <div style={{ width: '500px', height: '630px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img src={letterUrl} width={500} height={500} style={{ display: 'flex' }} />
+          <img src={letterUrl} width={580} height={580} style={{ display: 'flex' }} />
         </div>
       </div>
     ),
