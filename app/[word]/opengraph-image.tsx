@@ -24,27 +24,25 @@ export default async function Image({ params }: { params: Promise<{ word: string
 
   return new ImageResponse(
     (
-      <div style={{ width: '1200px', height: '630px', background: '#000000', display: 'flex', flexDirection: 'row', alignItems: 'stretch' }}>
+      <div style={{ width: '1200px', height: '630px', background: '#000000', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
         
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '60px 40px 60px 80px' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '24px', padding: '60px 40px 60px 80px' }}>
           <div style={{ display: 'flex', fontSize: '18px', fontWeight: 'bold', color: '#6e6e73', letterSpacing: '6px' }}>
             HOW DO YOU SPELL
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div style={{ display: 'flex', fontSize: '120px', fontWeight: 'bold', color: '#f5f5f7', letterSpacing: '-4px', lineHeight: '1' }}>
-              {displayWord}
-            </div>
-            <div style={{ display: 'flex', fontSize: '28px', color: '#30d158', fontWeight: 'bold' }}>
-              Correct spelling
-            </div>
+          <div style={{ display: 'flex', fontSize: '120px', fontWeight: 'bold', color: '#f5f5f7', letterSpacing: '-4px', lineHeight: '1' }}>
+            {displayWord}
+          </div>
+          <div style={{ display: 'flex', fontSize: '28px', color: '#30d158', fontWeight: 'bold' }}>
+            Correct spelling
           </div>
           <div style={{ display: 'flex', fontSize: '18px', color: '#3a3a3c' }}>
             howdoyouspell.app
           </div>
         </div>
 
-        <div style={{ width: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
-          <img src={letterBase64} width={500} height={500} style={{ display: 'flex' }} />
+        <div style={{ width: '500px', height: '630px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <img src={letterBase64} width={520} height={520} style={{ display: 'flex' }} />
         </div>
 
       </div>
