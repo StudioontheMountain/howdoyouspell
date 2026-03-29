@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 const AUDIENCE_ID = "f735f6ec-5ac5-4a57-8078-1fc3a8c4eb48"
 export async function POST(req: NextRequest) {
   try {
-    const { email } = await req.json()
+    const { email, term, category } = await req.json()
     if (!email || !email.includes("@")) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 })
     }
@@ -17,6 +17,12 @@ export async function POST(req: NextRequest) {
         body: JSON.stringify({
           email,
           unsubscribed: false,
+          data: {
+            source: "HowDoYouSpell",
+            site: "howdoyouspell",
+            term: term || "",
+            category: category || "",
+          },
         }),
       }
     )
