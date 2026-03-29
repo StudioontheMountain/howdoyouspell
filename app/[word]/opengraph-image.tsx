@@ -27,7 +27,7 @@ export default async function Image({ params }: { params: Promise<{ word: string
       <div style={{ width: '1200px', height: '630px', background: '#000000', display: 'flex', flexDirection: 'row' }}>
         
         {/* Left */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '60px 40px 60px 80px' }}>
+        <div style={{ width: '700px', display: 'flex', flexDirection: 'column', padding: '60px 40px 60px 80px' }}>
           <div style={{ display: 'flex', fontSize: '18px', fontWeight: 'bold', color: '#6e6e73', letterSpacing: '6px', marginBottom: '40px' }}>
             HOW DO YOU SPELL
           </div>
@@ -43,9 +43,9 @@ export default async function Image({ params }: { params: Promise<{ word: string
           </div>
         </div>
 
-        {/* Right — letter aligned to top of word */}
-        <div style={{ width: '480px', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '50px' }}>
-          <img src={letterBase64} width={420} height={420} style={{ display: 'flex' }} />
+        {/* Right — explicit 500x500 container */}
+        <div style={{ width: '500px', height: '630px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <img src={letterBase64} style={{ width: '500px', height: '500px', display: 'flex' }} />
         </div>
 
       </div>
