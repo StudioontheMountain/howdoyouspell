@@ -1,6 +1,10 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   metadataBase: new URL("https://www.howdoyouspell.app"),
   alternates: { canonical: "https://www.howdoyouspell.app" },
   title: {

@@ -58,7 +58,7 @@ export async function generateMetadata({
       description,
       url: `https://www.howdoyouspell.app/${entry.slug}/`,
       type: "article",
-      images: [`https://www.howdoyouspell.app/og/${entry.word}.jpg`],
+      images: [{ url: `https://www.howdoyouspell.app/og/${entry.word}.jpg`, width: 1200, height: 630 }],
     },
     twitter: { card: "summary_large_image", title, description, images: [`https://www.howdoyouspell.app/og/${entry.word}.jpg`] },
     alternates: { canonical: `https://www.howdoyouspell.app/${entry.slug}/` },
