@@ -78,12 +78,11 @@ export default function HomePage() {
         <span style={{ fontSize: 15, fontWeight: 600, letterSpacing: -0.3 }}>How Do You Spell</span>
         
       </nav>
-      <div style={{ maxWidth: 680, margin: '0 auto', padding: '32px 24px 48px' }}>
-        <h1 style={{ fontSize: 'clamp(36px, 6vw, 56px)', fontWeight: 700, letterSpacing: -1.5, textAlign: 'center', marginBottom: 12, lineHeight: 1.1 }}>How Do You Spell</h1>
-        <p style={{ textAlign: 'center', color: '#6e6e73', fontSize: 17, marginBottom: 24 }}>Type any word. We will sort it out.</p>
+      <div style={{ maxWidth: 680, margin: '0 auto', padding: '16px 24px 48px' }}>
+        <h1 style={{ fontSize: 'clamp(36px, 6vw, 56px)', fontWeight: 700, letterSpacing: -1.5, textAlign: 'center', marginBottom: 16, lineHeight: 1.1 }}>How Do You Spell</h1>
         <SpellingTeaser />
         <div style={{ display: 'flex', gap: 8, marginBottom: 24 }}>
-          <input ref={inputRef} value={query} onChange={e => { setQuery(e.target.value); setNotFound(false); setResult(null) }} onKeyDown={e => e.key === 'Enter' && handleSearch()} placeholder="Type any word..." style={{ flex: 1, minWidth: 0, height: 52, borderRadius: 26, border: '1.5px solid #0071e3', padding: '0 20px', fontSize: 17, outline: 'none', background: '#fff' }} />
+          <input ref={inputRef} value={query} onChange={e => { setQuery(e.target.value); setNotFound(false); setResult(null) }} onKeyDown={e => e.key === 'Enter' && handleSearch()} placeholder="Check any word's spelling..." style={{ flex: 1, minWidth: 0, height: 52, borderRadius: 26, border: '1.5px solid #0071e3', padding: '0 20px', fontSize: 17, outline: 'none', background: '#fff' }} />
         </div>
         <div style={{ textAlign: 'center', marginBottom: 16 }}>
           <button onClick={() => { if (navigator.share) { navigator.share({ title: 'How Do You Spell', url: 'https://www.howdoyouspell.app' }) } else { alert('Tip: Add this page to your home screen or bookmarks for quick access!') } }} style={{ background: 'none', border: '0.5px solid #d2d2d7', borderRadius: 20, padding: '7px 18px', fontSize: 13, color: '#6e6e73', cursor: 'pointer' }}>🔖 Bookmark Me</button>
