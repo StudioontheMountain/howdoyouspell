@@ -36,9 +36,11 @@ export async function generateMetadata({
     : topMisspelling
     ? `${topMisspelling} or ${entry.word}? How to Spell ${displayWord}`
     : `How Do You Spell ${displayWord}? Correct Spelling & Examples`
-  const description = entry.hasFullData
-    ? `The correct spelling is "${entry.word}". ${entry.misspellings.length ? `Common misspellings: ${entry.misspellings.slice(0, 3).join(", ")}. ` : ""}${entry.tip ?? ""}${entry.commentary ? " " + entry.commentary.slice(0, 100) + "…" : ""}`
-    : `Learn the correct spelling of "${entry.word}" with etymology and expert commentary.${entry.commentary ? " " + entry.commentary.slice(0, 120) + "…" : ""}`
+  const topMiss = entry.misspellings?.[0]
+  const description = topMiss
+    ? `The correct spelling is "${entry.word}" — not "${topMiss}". ${entry.tip ? entry.tip.slice(0, 80) + ". " : ""}US, UK, Canadian & Australian variants covered.`
+    : `How do you spell ${entry.word}? Correct spelling, pronunciation, etymology and dialect differences across US, UK, Canadian and Australian English.`
+  const descTrimmed = description.slice(0, 155)
 
   const keywords = [
     `how do you spell ${entry.word}`,
@@ -51,16 +53,16 @@ export async function generateMetadata({
 
   return {
     title,
-    description,
+    description: descTrimmed,
     keywords,
     openGraph: {
       title,
-      description,
+      description: descTrimmed,
       url: `https://www.howdoyouspell.app/${entry.slug}/`,
       type: "article",
       images: [{ url: `https://www.howdoyouspell.app/og/${entry.word}.jpg`, width: 1200, height: 630 }],
     },
-    twitter: { card: "summary_large_image", title, description, images: [`https://www.howdoyouspell.app/og/${entry.word}.jpg`] },
+    twitter: { card: "summary_large_image", title, description: descTrimmed, images: [`https://www.howdoyouspell.app/og/${entry.word}.jpg`] },
     alternates: { canonical: `https://www.howdoyouspell.app/${entry.slug}/` },
   }
 }
