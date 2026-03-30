@@ -75,8 +75,10 @@ export default function HomePage() {
   return (
     <div style={{ minHeight: '100vh', background: '#f5f5f7', fontFamily: '-apple-system, Helvetica Neue, Arial, sans-serif' }}>
       <nav style={{ position: 'sticky', top: 0, zIndex: 50, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px', background: 'rgba(245,245,247,0.85)', backdropFilter: 'blur(20px)', borderBottom: '0.5px solid #d2d2d7' }}>
-        <span style={{ fontSize: 15, fontWeight: 600, letterSpacing: -0.3 }}>How Do You Spell</span>
-        
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <span style={{ fontSize: 15, fontWeight: 600, letterSpacing: -0.3 }}>How Do You Spell</span>
+          <button onClick={() => { if (navigator.share) { navigator.share({ title: 'How Do You Spell', url: 'https://www.howdoyouspell.app' }) } else { alert('Tip: Add this page to your bookmarks for quick access!') } }} style={{ background: 'none', border: '0.5px solid #d2d2d7', borderRadius: 20, padding: '5px 14px', fontSize: 13, color: '#6e6e73', cursor: 'pointer' }}>🔖 Bookmark Me</button>
+        </div>
       </nav>
       <div style={{ maxWidth: 680, margin: '0 auto', padding: '16px 24px 48px' }}>
         <h1 style={{ fontSize: 'clamp(36px, 6vw, 56px)', fontWeight: 700, letterSpacing: -1.5, textAlign: 'center', marginBottom: 16, lineHeight: 1.1 }}>How Do You Spell</h1>
