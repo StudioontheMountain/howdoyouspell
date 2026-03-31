@@ -2,7 +2,7 @@ name: Auto Blog
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Every day 6am UTC
+    - cron: '0 6 */2 * *'  # Every 2 days 6am UTC
   workflow_dispatch:  # allows manual trigger
 
 jobs:
