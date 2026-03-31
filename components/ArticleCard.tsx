@@ -63,7 +63,7 @@ export function FeaturedArticleCard({ article }: { article: Article }) {
         border: `0.5px solid ${STYLES.cardBorder}`,
         borderRadius: STYLES.cardRadius,
         padding: "1.125rem 1.25rem",
-        height: STYLES.cardHeight / 2,
+        minHeight: STYLES.cardHeight / 2,
         overflow: "hidden",
         display: "flex",
         flexDirection: "row",
@@ -76,15 +76,15 @@ export function FeaturedArticleCard({ article }: { article: Article }) {
         </div>
         <div style={{ width: "0.5px", background: STYLES.cardBorder, alignSelf: "stretch" }} />
         <div style={{ flex: 1, overflow: "hidden" }}>
-          <div style={{ fontWeight: 700, color: STYLES.titleColor, fontSize: "0.9375rem", letterSpacing: "-0.01em", lineHeight: 1.3, marginBottom: "0.25rem", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+          <div style={{ fontSize: "0.6875rem", color: STYLES.dateColor, marginBottom: "0.25rem" }}>
+            {new Date(article.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+          </div>
+          <div style={{ fontWeight: 700, color: STYLES.titleColor, fontSize: "0.9375rem", letterSpacing: "-0.01em", lineHeight: 1.3, marginBottom: "0.25rem" }}>
             {article.title}
           </div>
           <div style={{ fontSize: "0.8125rem", color: STYLES.bodyColor, lineHeight: 1.5, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>
             {article.body}
           </div>
-        </div>
-        <div style={{ fontSize: "0.6875rem", color: STYLES.dateColor, whiteSpace: "nowrap" }}>
-          {new Date(article.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
         </div>
       </div>
     </Link>
