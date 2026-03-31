@@ -77,7 +77,7 @@ export default function HomePage() {
       <nav style={{ position: 'sticky', top: 0, zIndex: 50, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px', background: 'rgba(245,245,247,0.85)', backdropFilter: 'blur(20px)', borderBottom: '0.5px solid #d2d2d7' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
           <span style={{ fontSize: 15, fontWeight: 600, letterSpacing: -0.3 }}>How Do You Spell</span>
-          <button onClick={() => { if (navigator.share) { navigator.share({ title: 'How Do You Spell', url: 'https://www.howdoyouspell.app' }) } else { alert('Tip: Add this page to your bookmarks for quick access!') } }} style={{ background: 'none', border: '0.5px solid #d2d2d7', borderRadius: 20, padding: '5px 14px', fontSize: 13, color: '#6e6e73', cursor: 'pointer' }}>🔖 Bookmark Me</button>
+          <button onClick={() => { if (navigator.share) { navigator.share({ title: 'How Do You Spell', url: 'https://www.howdoyouspell.app' }) } else { alert('Tip: Add this page to your bookmarks for quick access!') } }} style={{ background: 'none', border: '0.5px solid #d2d2d7', borderRadius: 20, padding: '5px 14px', fontSize: 13, color: '#6e6e73', cursor: 'pointer' }}>⭐ Bookmark Me</button>
         </div>
       </nav>
       <div style={{ maxWidth: 680, margin: '0 auto', padding: '16px 24px 48px' }}>
@@ -87,7 +87,7 @@ export default function HomePage() {
           <input ref={inputRef} value={query} onChange={e => { setQuery(e.target.value); setNotFound(false); setResult(null) }} onKeyDown={e => e.key === 'Enter' && handleSearch()} placeholder="Check any word's spelling..." style={{ flex: 1, minWidth: 0, height: 52, borderRadius: 26, border: '1.5px solid #0071e3', padding: '0 20px', fontSize: 17, outline: 'none', background: '#fff' }} />
         </div>
         
-        <div style={{ background: '#fff', borderRadius: 16, overflow: 'hidden', border: '0.5px solid #d2d2d7', marginBottom: 12 }}>
+        <div style={{ background: '#fff', borderRadius: 16, overflow: 'hidden', border: '0.5px solid #d2d2d7', marginBottom: 8 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', background: '#f5f0e8', borderBottom: '0.5px solid #ddd8cc' }}>
             {['US','UK','IE','CA','AU','NZ'].map(d => <div key={d} style={{ padding: '10px 2px', textAlign: 'center', fontSize: 11, fontWeight: 600, color: '#6e6e73', letterSpacing: 0.3 }}>{d}</div>)}
           </div>

@@ -56,7 +56,7 @@ export default function SpellingTeaser() {
       <div style={{ fontSize: 11, fontWeight: 600, color: '#aeaeb2', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>Can you spell it?</div>
       <p style={{ fontSize: 15, color: '#6e6e73', lineHeight: 1.6, marginBottom: 16, minHeight: 48 }}>{current.definition}</p>
       {state === 'idle' && (
-        <div style={{ display: 'flex', gap: 8 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           <input
             ref={inputRef}
             value={input}
@@ -66,9 +66,9 @@ export default function SpellingTeaser() {
             autoComplete="off"
             autoCorrect="off"
             spellCheck={false}
-            style={{ flex: 1, height: 44, borderRadius: 22, border: '1px solid #d2d2d7', padding: '0 16px', fontSize: 16, outline: 'none', background: '#f5f5f7', fontFamily: 'inherit' }}
+            style={{ width: '100%', height: 44, borderRadius: 22, border: '1px solid #d2d2d7', padding: '0 16px', fontSize: 16, outline: 'none', background: '#f5f5f7', fontFamily: 'inherit', boxSizing: 'border-box' }}
           />
-          <button onClick={check} style={{ height: 44, padding: '0 20px', borderRadius: 22, border: '1px solid #0071e3', background: '#0071e3', color: '#fff', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit' }}>Go</button>
+          <button onClick={check} style={{ width: '100%', height: 44, borderRadius: 22, border: '1px solid #0071e3', background: '#0071e3', color: '#fff', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit' }}>Go</button>
         </div>
       )}
       {state === 'correct' && (
