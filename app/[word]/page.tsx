@@ -78,6 +78,8 @@ function JsonLd({ entry }: { entry: NonNullable<ReturnType<typeof getWordBySlug>
       name: entry.word,
       description: entry.commentary ?? `The correct spelling of "${entry.word}".`,
       url: `https://www.howdoyouspell.app/${entry.slug}/`,
+      datePublished: new Date().toISOString().split("T")[0],
+      dateModified: new Date().toISOString().split("T")[0],
       inDefinedTermSet: {
         "@type": "DefinedTermSet",
         name: "English Spelling Reference",
