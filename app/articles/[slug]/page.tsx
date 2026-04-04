@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import type { Metadata } from "next"
 import articles from "@/public/articles.json"
+import { WORDS } from "@/lib/words-data"
 import AffiliateBar from "@/components/AffiliateBar"
 import { DEFAULT_AFFILIATE } from "@/lib/affiliates"
 
@@ -29,6 +30,39 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: article.date,
     },
   }
+}
+
+
+function LinkedBody({ text }: { text: string }) {
+  const termMap = new Map(WORDS.map((w: any) => [w.word.toLowerCase(), w.slug]))
+  const sortedTerms = [...termMap.keys()].sort((a, b) => b.length - a.length)
+  const paragraphs = text.split("\n")
+
+  return (
+    <div style={{ fontSize: "1rem", color: "#3a3a3c", lineHeight: 1.8, letterSpacing: "-0.01em" }}>
+      {paragraphs.map((p: string, i: number) => {
+        if (!p.trim()) return null
+        const linked = new Set<string>()
+        let result = p
+        const replacements: { placeholder: string; jsx: string }[] = []
+
+        for (const term of sortedTerms) {
+          if (linked.size >= 3) break
+          const regex = new RegExp(`\\b(${term.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\export default async function ArticlePage")})\\b`, "i")
+          const match = result.match(regex)
+          if (match && !linked.has(term)) {
+            const slug = termMap.get(term)
+            const placeholder = `__LINK_${linked.size}__`
+            replacements.push({ placeholder, jsx: `<a href="/${slug}/" style="color:#1a5276;textDecoration:underline;textUnderlineOffset:2px">${match[0]}</a>` })
+            result = result.replace(regex, placeholder)
+            linked.add(term)
+          }
+        }
+
+        return <p key={i} style={{ margin: "0 0 1rem" }} dangerouslySetInnerHTML={{ __html: replacements.reduce((s, r) => s.replace(r.placeholder, r.jsx), result) }} />
+      })}
+    </div>
+  )
 }
 
 export default async function ArticlePage({ params }: Props) {
@@ -70,11 +104,7 @@ export default async function ArticlePage({ params }: Props) {
           <h1 style={{ margin: "0 0 1.5rem", fontSize: "clamp(1.5rem, 4vw, 2.25rem)", fontWeight: 800, letterSpacing: "-0.04em", color: "#1d1d1f", lineHeight: 1.2 }}>
             {article.title}
           </h1>
-          <div style={{ fontSize: "1rem", color: "#3a3a3c", lineHeight: 1.8, letterSpacing: "-0.01em" }}>
-            {article.body.split("\n").map((p: string, i: number) => (
-              <p key={i} style={{ margin: "0 0 1rem" }}>{p}</p>
-            ))}
-          </div>
+          <LinkedBody text={article.body} />
         </main>
         <AffiliateBar ctaLabel={ctaLabel} ctaUrl={ctaUrl} />
         <footer style={{ borderTop: "0.5px solid #d2d2d7", background: "#f5f5f7", padding: "1.25rem clamp(1.25rem, 5vw, 2.5rem) 5rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.75rem" }}>
