@@ -14,7 +14,7 @@ async function fetchNews() {
   }
   return data.articles.map(a => a.title).join("\n")
 }
-async function generateArticle(headlines) {
+async function generateArticle(headlines, attempt = 1) {
   const prompt = `You are a sharp, opinionated journalist covering the English language for everyday Americans. Write like Hunter Thompson — direct, urgent, occasionally sardonic, always clear. No academic tone. No corporate speak.
 
 Here are today's top English language news headlines:
@@ -42,12 +42,40 @@ Respond with ONLY a JSON object (no markdown, no backticks):
     body: JSON.stringify({
       model: "claude-sonnet-4-20250514",
       max_tokens: 1000,
+      system: "You are a JSON API. You output only raw valid JSON with no markdown, no backticks, no commentary. Never use double quotes inside string values.",
       messages: [{ role: "user", content: prompt }],
     }),
   })
+
   const data = await res.json()
-  const text = data.content[0].text.trim()
-  return JSON.parse(text)
+  if (!data.content) throw new Error("Unexpected API response: " + JSON.stringify(data))
+
+  let text = data.content[0].text.trim()
+
+  // Strip markdown code fences if present
+  text = text.replace(/^```json\s*/i, "").replace(/^```\s*/i, "").replace(/\s*```$/i, "").trim()
+
+  // Find the outermost JSON object only
+  const start = text.indexOf("{")
+  const end = text.lastIndexOf("}")
+  if (start === -1 || end === -1) {
+    if (attempt < 3) {
+      console.log(`Attempt ${attempt} failed to find JSON, retrying...`)
+      return generateArticle(headlines, attempt + 1)
+    }
+    throw new Error("No JSON object found after 3 attempts: " + text.slice(0, 200))
+  }
+
+  const jsonStr = text.slice(start, end + 1)
+  try {
+    return JSON.parse(jsonStr)
+  } catch (e) {
+    if (attempt < 3) {
+      console.log(`Attempt ${attempt} JSON parse failed, retrying...`)
+      return generateArticle(headlines, attempt + 1)
+    }
+    throw new Error("JSON parse failed after 3 attempts: " + jsonStr.slice(0, 200))
+  }
 }
 function slugify(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 80)
