@@ -28,6 +28,9 @@ Rules:
 - Do NOT ask questions or use interrogative sentences
 - Do not use the word "dictionary" or "glossary"
 - Write in flowing prose only — no lists, no headers within the body
+- Do NOT start any paragraph with "While" or "Although" — no balanced concession sentences
+- Do NOT end the article with a tidy summary, moral, or bow-tying conclusion — end mid-thought like you ran out of whiskey and had somewhere to be
+- Do NOT use a "to be sure" or "on the other hand" structure — pick a side and stay there
 - Do NOT use these phrases: "It's worth noting that", "In conclusion", "Delve into", "It is important to note", "In the ever-evolving", "Navigating the complexities", "In today's fast-paced world", "At the end of the day", "Game-changer", "Shed light on", "In summary", "Unlock the potential", "Dive deep into", "Robust", "Seamlessly", "Cutting-edge", "Transformative", "In the realm of", "It goes without saying", "Comprehensive", "Streamline", "Holistic approach", "Moving forward", "Honestly", "Key takeaway", "Leverage", "Moreover", "Furthermore", "Additionally", "Notably", "Importantly", "Interestingly", "Crucially", "It's clear that", "One could argue", "It remains to be seen", "Time will tell", "Only time will tell", "Particularly", "Especially", "Significantly", "Remarkably", "Undeniably", "Undoubtedly", "Landscape", "Ecosystem", "Paradigm", "Framework", "Stakeholders", "Intersection of", "At the forefront", "Double-edged sword", "A testament to", "It's worth mentioning", "That being said", "With that said", "Make no mistake", "The bottom line is", "Here's the thing", "Let's be clear", "To be sure", "Rest assured"
 
 Respond with ONLY a JSON object (no markdown, no backticks):
