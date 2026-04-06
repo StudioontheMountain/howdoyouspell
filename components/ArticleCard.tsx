@@ -71,14 +71,16 @@ export function FeaturedArticleCard({ article }: { article: Article }) {
         gap: "1.25rem",
         cursor: "pointer",
       }}>
-        <div style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: STYLES.accentColor, whiteSpace: "nowrap" }}>
-          Featured
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", whiteSpace: "nowrap" }}>
+          <div style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: STYLES.accentColor }}>
+            Featured
+          </div>
+          <div style={{ fontSize: "0.6875rem", color: STYLES.dateColor, marginTop: "0.25rem" }}>
+            {new Date(article.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+          </div>
         </div>
         <div style={{ width: "0.5px", background: STYLES.cardBorder, alignSelf: "stretch" }} />
         <div style={{ flex: 1, overflow: "hidden" }}>
-          <div style={{ fontSize: "0.6875rem", color: STYLES.dateColor, marginBottom: "0.25rem" }}>
-            {new Date(article.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
-          </div>
           <div style={{ fontWeight: 700, color: STYLES.titleColor, fontSize: "0.9375rem", letterSpacing: "-0.01em", lineHeight: 1.3, marginBottom: "0.25rem" }}>
             {article.title}
           </div>
