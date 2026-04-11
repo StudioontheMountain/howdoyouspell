@@ -81,7 +81,7 @@ export default function HomePage() {
         </div>
       </nav>
       <div style={{ maxWidth: 680, margin: '0 auto', padding: '16px 24px 48px' }}>
-        <h1 style={{ fontSize: 'clamp(36px, 6vw, 56px)', fontWeight: 700, letterSpacing: -1.5, textAlign: 'center', marginBottom: 16, lineHeight: 1.1 }}>How Do You Spell</h1>
+        <h1 style={{ fontSize: 'clamp(36px, 6vw, 56px)', fontWeight: 700, letterSpacing: -1.5, textAlign: 'center', marginBottom: 16, lineHeight: 1.1 }}>How Do You Spell 🏆</h1>
         <SpellingTeaser />
         <div style={{ display: 'flex', gap: 8, marginBottom: 24 }}>
           <input ref={inputRef} value={query} onChange={e => { setQuery(e.target.value); setNotFound(false); setResult(null) }} onKeyDown={e => e.key === 'Enter' && handleSearch()} placeholder="Check any word's spelling..." style={{ flex: 1, minWidth: 0, height: 52, borderRadius: 26, border: '1.5px solid #0071e3', padding: '0 20px', fontSize: 17, outline: 'none', background: '#fff' }} />
