@@ -48,7 +48,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="theme-color" content="#f5f5f7" />
-        <meta name="impact-site-verification" value="e826f02f-b61e-4925-a926-d53c8b580c58" />
+        <meta name="impact-site-verification" content="e826f02f-b61e-4925-a926-d53c8b580c58" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-06JSHRD37J"></script>
         <script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-06JSHRD37J');` }} />
         <script
