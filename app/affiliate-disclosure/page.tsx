@@ -72,7 +72,7 @@ export default function AffiliateDisclosure() {
         <p style={{ fontSize: "0.6875rem", color: "#aeaeb2", margin: 0 }}>This page may contain affiliate links. © {new Date().getFullYear()} How Do You Spell</p>
         <nav style={{ display: "flex", gap: "1.5rem" }}>
           {["About", "Privacy", "Contact"].map((label) => (
-            <Link key={label} href={`/${label.toLowerCase()}`} style={{ fontSize: "0.6875rem", color: "#aeaeb2", textDecoration: "none" }}>{label}</Link>
+            <Link key={label} href={`/${label.toLowerCase()}/`} style={{ fontSize: "0.6875rem", color: "#aeaeb2", textDecoration: "none" }}>{label}</Link>
           ))}
         </nav>
       </footer>

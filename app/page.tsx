@@ -139,12 +139,12 @@ export default function HomePage() {
       <footer style={{ borderTop: '0.5px solid #d2d2d7', padding: 24, paddingBottom: 80, textAlign: 'center', fontSize: 12, color: '#aeaeb2' }}>
         <div style={{ marginBottom: 10 }}>© {new Date().getFullYear()} How Do You Spell · Free spelling reference · US, UK, IE, CA, AU and NZ English</div>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px 20px' }}>
-          <a href="/about" style={{ color: '#aeaeb2', textDecoration: 'none' }}>About</a>
-          <a href="/privacy" style={{ color: '#aeaeb2', textDecoration: 'none' }}>Privacy</a>
-          <a href="/terms" style={{ color: '#aeaeb2', textDecoration: 'none' }}>Terms</a>
-          <a href="/data-use" style={{ color: '#aeaeb2', textDecoration: 'none' }}>Data Use</a>
-          <a href="/affiliate-disclosure" style={{ color: '#aeaeb2', textDecoration: 'none' }}>Affiliate Disclosure</a>
-          <a href="/contact" style={{ color: '#aeaeb2', textDecoration: 'none' }}>Contact</a>
+          <a href="/about/" style={{ color: '#aeaeb2', textDecoration: 'none' }}>About</a>
+          <a href="/privacy/" style={{ color: '#aeaeb2', textDecoration: 'none' }}>Privacy</a>
+          <a href="/terms/" style={{ color: '#aeaeb2', textDecoration: 'none' }}>Terms</a>
+          <a href="/data-use/" style={{ color: '#aeaeb2', textDecoration: 'none' }}>Data Use</a>
+          <a href="/affiliate-disclosure/" style={{ color: '#aeaeb2', textDecoration: 'none' }}>Affiliate Disclosure</a>
+          <a href="/contact/" style={{ color: '#aeaeb2', textDecoration: 'none' }}>Contact</a>
         </div>
       </footer>
     </div>

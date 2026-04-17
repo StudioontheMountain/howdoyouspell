@@ -348,7 +348,7 @@ export default async function WordPage({ params }: { params: Promise<{ word: str
         </p>
         <nav style={{ display: "flex", gap: "1.5rem" }}>
           {["About", "Privacy", "Contact", "Affiliate Disclosure"].map((label) => (
-            <Link key={label} href={`/${label.toLowerCase().replace(/ /g, "-")}`} style={{ fontSize: "0.6875rem", color: "#aeaeb2", textDecoration: "none" }}>
+            <Link key={label} href={`/${label.toLowerCase().replace(/ /g, "-")}/`} style={{ fontSize: "0.6875rem", color: "#aeaeb2", textDecoration: "none" }}>
               {label}
             </Link>
           ))}

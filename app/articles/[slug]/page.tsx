@@ -111,7 +111,7 @@ export default async function ArticlePage({ params }: Props) {
           <p style={{ fontSize: "0.6875rem", color: "#6e6e73", margin: 0 }}>© {new Date().getFullYear()} HowDoYouSpell</p>
           <nav style={{ display: "flex", gap: "1.5rem" }}>
             {["About", "Privacy", "Terms", "Data Use", "Affiliate Disclosure", "Contact"].map(label => (
-              <Link key={label} href={`/${label.toLowerCase().replace(/ /g, "-")}`} style={{ fontSize: "0.6875rem", color: "#6e6e73", textDecoration: "none" }}>{label}</Link>
+              <Link key={label} href={`/${label.toLowerCase().replace(/ /g, "-")}/`} style={{ fontSize: "0.6875rem", color: "#6e6e73", textDecoration: "none" }}>{label}</Link>
             ))}
           </nav>
         </footer>

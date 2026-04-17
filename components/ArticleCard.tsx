@@ -22,7 +22,7 @@ interface Article {
 
 export function ArticleCard({ article }: { article: Article }) {
   return (
-    <Link href={`/articles/${article.slug}`} style={{ textDecoration: "none" }}>
+    <Link href={`/articles/${article.slug}/`} style={{ textDecoration: "none" }}>
       <div style={{
         background: STYLES.cardBg,
         border: `0.5px solid ${STYLES.cardBorder}`,
@@ -57,7 +57,7 @@ export function ArticleCard({ article }: { article: Article }) {
 
 export function FeaturedArticleCard({ article }: { article: Article }) {
   return (
-    <Link href={`/articles/${article.slug}`} style={{ textDecoration: "none" }}>
+    <Link href={`/articles/${article.slug}/`} style={{ textDecoration: "none" }}>
       <div style={{
         background: STYLES.cardBg,
         border: `0.5px solid ${STYLES.cardBorder}`,

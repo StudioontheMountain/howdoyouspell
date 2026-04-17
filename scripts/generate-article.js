@@ -30,6 +30,14 @@ Rules:
 - Write in flowing prose only — no lists, no headers within the body
 - Do NOT start any paragraph with "While" or "Although" — no balanced concession sentences
 - Do NOT end the article with a tidy summary, moral, or bow-tying conclusion — end mid-thought like you ran out of whiskey and had somewhere to be
+- VARY paragraph length dramatically — one paragraph might be a single sentence, the next might be six sentences long. Never write three or more paragraphs of similar length in a row
+- Do NOT open more than two paragraphs with a thesis or topic sentence — bury the point mid-paragraph sometimes, let the reader find it
+- Include at least one first-person observation or aside — "I saw," "I remember," "I once heard" — something that sounds like a person wrote this, not a committee
+- Break at least one grammatical rule on purpose — a fragment, a run-on, a sentence starting with "And" or "But" for emphasis
+- Do NOT use parallel structure more than once per article — if you write "X does this. Y does that." never repeat that pattern
+- Do NOT list things in threes. If you must list, use two or four items. The triad is an AI tell
+- Avoid uniform sentence length — mix very short sentences with long sprawling ones in the same paragraph
+- Never use a word when a rougher, less precise word would sound more human — "stuff" beats "elements," "mess" beats "complexity," "broke" beats "disrupted"
 - Do NOT use a "to be sure" or "on the other hand" structure — pick a side and stay there
 - Do NOT use these phrases: "It's worth noting that", "In conclusion", "Delve into", "It is important to note", "In the ever-evolving", "Navigating the complexities", "In today's fast-paced world", "At the end of the day", "Game-changer", "Shed light on", "In summary", "Unlock the potential", "Dive deep into", "Robust", "Seamlessly", "Cutting-edge", "Transformative", "In the realm of", "It goes without saying", "Comprehensive", "Streamline", "Holistic approach", "Moving forward", "Honestly", "Key takeaway", "Leverage", "Moreover", "Furthermore", "Additionally", "Notably", "Importantly", "Interestingly", "Crucially", "It's clear that", "One could argue", "It remains to be seen", "Time will tell", "Only time will tell", "Particularly", "Especially", "Significantly", "Remarkably", "Undeniably", "Undoubtedly", "Landscape", "Ecosystem", "Paradigm", "Framework", "Stakeholders", "Intersection of", "At the forefront", "Double-edged sword", "A testament to", "It's worth mentioning", "That being said", "With that said", "Make no mistake", "The bottom line is", "Here's the thing", "Let's be clear", "To be sure", "Rest assured"
 
