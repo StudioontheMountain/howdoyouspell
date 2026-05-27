@@ -1,5 +1,11 @@
 [
   {
+    "title": "Python's Package Spam Problem Just Got a New Name",
+    "slug": "python-s-package-spam-problem-just-got-a-new-name",
+    "date": "2026-05-27",
+    "body": "The Python programming community just watched another made-up word crash into their sacred repository. PyPI, the place where coders dump their software packages for the world to grab, now hosts something called 'sureguard.' Nobody asked for it. Nobody needed it. But there it sits, taking up digital real estate like a drunk uncle at Thanksgiving.\n\nThis matters because PyPI has become the Wild West of software naming. Every day, thousands of developers upload packages with names that sound like rejected pharmaceutical brands or startup accelerator fever dreams. I once watched a programmer spend forty minutes trying to figure out what 'fluxinator' actually did. Turned out it just moved files around.\n\nThe real crime here is linguistic laziness. Compound words used to mean something. 'Sureguard' tells you exactly nothing about what the thing does, unless you're the kind of person who thinks 'protection protection' makes perfect sense. It's the software equivalent of naming your restaurant 'Foodplace.'\n\nPackage names matter because they're the first thing developers see. Bad names create confusion, waste time, and make the whole ecosystem look like amateur hour. But the flood keeps coming, one meaningless mashup at"
+  },
+  {
     "title": "The Governor General's French Problem Shows How Language Policing Gets Ugly",
     "slug": "the-governor-general-s-french-problem-shows-how-language-policing-gets-ugly",
     "date": "2026-05-25",
