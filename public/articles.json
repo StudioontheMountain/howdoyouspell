@@ -1,5 +1,11 @@
 [
   {
+    "title": "The Death of the Terminal: AI Commands Invade Your Computer",
+    "slug": "the-death-of-the-terminal-ai-commands-invade-your-computer",
+    "date": "2026-06-01",
+    "body": "The command line just got easier to kill. A new Python package called aicommand landed on PyPI this week, promising to translate plain English into terminal commands for people who never learned to speak Unix. I once watched a colleague spend twenty minutes trying to remember the syntax for chmod 755. Now machines will do that thinking for us.\n\nThe tool works like a linguistic middleman between human intentions and computer gibberish. Type 'show me all the large files in this folder' and it spits out the proper find command with all the flags and arguments your brain forgot. No more man pages. No more Stack Overflow searches at 2 AM.\n\nThis feels like the beginning of something bigger and messier. Programming languages evolved from punch cards to assembly to C to Python because each step made computers more accessible to regular humans. But aicommand skips the learning entirely. You never have to understand what du -sh * actually does, just that it works when you ask nicely.\n\nSure, convenience wins. But we're trading the precision of knowing exactly what commands do for the comfort of not having to learn them. The terminal was the last place where words still had to be spelled exactly right, where syntax mattered, where"
+  },
+  {
     "title": "Delhi Schools Force Language Switch on Students Who Mastered English",
     "slug": "delhi-schools-force-language-switch-on-students-who-mastered-english",
     "date": "2026-05-31",
