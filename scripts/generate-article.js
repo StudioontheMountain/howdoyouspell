@@ -51,7 +51,7 @@ Respond with ONLY a JSON object (no markdown, no backticks):
       "anthropic-version": "2023-06-01",
     },
     body: JSON.stringify({
-      model: "claude-sonnet-4-20250514",
+      model: "claude-sonnet-4-6",
       max_tokens: 1000,
       system: "You are a JSON API. You output only raw valid JSON with no markdown, no backticks, no commentary. Never use double quotes inside string values.",
       messages: [{ role: "user", content: prompt }],
