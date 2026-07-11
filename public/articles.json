@@ -1,5 +1,11 @@
 [
   {
+    "title": "Someone Spelled 'English' Wrong and Put It on the Internet Forever",
+    "slug": "someone-spelled-english-wrong-and-put-it-on-the-internet-forever",
+    "date": "2026-07-11",
+    "body": "There is a package sitting on PyPI right now called engleash. Not english. Not anglish. Engleash. Like someone sneezed on a keyboard and hit publish before the cold medicine wore off.\n\nI once watched a colleague spend forty minutes arguing that a typo in a published report gave it character. He was wrong then and this is different anyway, because a software package name is permanent in a way that a memo is not. PyPI does not have an eraser. The name lives in the index, gets scraped by bots, shows up in search results, and becomes the thing people type into a terminal at two in the morning when they are trying to get something to work.\n\nThe word at the center of all this is english. A word so common that autocorrect barely bothers with it anymore. And yet.\n\nSoftware developers who care about language enough to build tools around it are the exact people who should catch this stuff before it ships. The irony is fat and slow-moving, easy to hit. Someone built a package presumably meant to help with English in some form, named it with a busted spelling, and the whole thing now sits there like a typo carved into wet concrete that dried overnight before anyone noticed the"
+  },
+  {
     "title": "That Norwegian Football Taunt Is a Perfect Little Piece of English",
     "slug": "that-norwegian-football-taunt-is-a-perfect-little-piece-of-english",
     "date": "2026-07-09",
