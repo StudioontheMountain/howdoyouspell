@@ -1,5 +1,11 @@
 [
   {
+    "title": "A Trillion Parameters and English Is Along for the Ride",
+    "slug": "a-trillion-parameters-and-english-is-along-for-the-ride",
+    "date": "2026-08-01",
+    "body": "Sarvam AI is building a model so large the number alone sounds like science fiction. A trillion parameters. That is not a typo and it is not humility. The Indian company is aiming straight at the giants — the American giants, the ones whose names are now verbs in office hallways and college dorms across the country.\n\nAnd here is what nobody in the language press wants to say out loud: the race to build smarter AI is also a race about whose English wins.\n\nI remember sitting in a diner in Cincinnati years ago, listening to a trucker argue that spell-check had already broken his kids' sense of grammar. He wasn't wrong, just early. These models don't just check spelling — they produce language, shape it, nudge it toward whatever patterns dominated their training data. If the data skews one direction culturally, the prose that comes out the other end skews too. Sarvam has explicitly trained on Indian languages, which means its English, when it generates English, will carry different instincts, different rhythms, different assumptions about formality and register.\n\nThat is a genuinely weird thing to reckon with. American English has never had serious competition from a machine built somewhere"
+  },
+  {
     "title": "A Korean Kid Beat Every American Adult at Their Own Language",
     "slug": "a-korean-kid-beat-every-american-adult-at-their-own-language",
     "date": "2026-07-31",
