@@ -1,5 +1,11 @@
 [
   {
+    "title": "Simplified Technical English Is Coming for Your Prose, Whether You Like It or Not",
+    "slug": "simplified-technical-english-is-coming-for-your-prose-whether-you-like-it-or-not",
+    "date": "2026-08-17",
+    "body": "There is a controlled language called ASD-STE100 that aerospace engineers use to write maintenance manuals, and somebody just fed its rules into an AI coding tool so that machines can talk to other machines without getting confused. I remember the first time I picked up an aircraft maintenance manual — dense, airless, stripped of every adjective that might cause a misread at thirty thousand feet. That stuff was designed for humans trying not to die. Now it is being repurposed to sand the ambiguity out of language that AI agents read before taking action on your behalf.\n\nThis should make word people uncomfortable.\n\nThe whole project treats English like a bug to be patched. Ambiguity, which is where poetry lives, where humor hides, where half of human meaning gets smuggled through — gets classified as a defect. A rule violation. Something to rewrite. The engineers behind STE have always known what they were doing was brutal by design, a necessary brutality for cockpit safety, sure, but still a gutting of the language.\n\nNow that same brutality is getting trained on the sentences agents read before they go execute something in the real world, and the pressure to write flat, rule-bound, machine-legible English is going to creep outward from"
+  },
+  {
     "title": "Welsh Christians Just Pulled Off Something Ancient and Radical",
     "slug": "welsh-christians-just-pulled-off-something-ancient-and-radical",
     "date": "2026-08-15",
