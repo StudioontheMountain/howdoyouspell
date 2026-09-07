@@ -1,5 +1,11 @@
 [
   {
+    "title": "Braille Meets English and Nobody Seems to Care",
+    "slug": "braille-meets-english-and-nobody-seems-to-care",
+    "date": "2026-09-07",
+    "body": "There is a version number buried in that headline — braillebaseenglish 0.2.9 — and most people scrolled past it without blinking. That number means something. It means someone shipped an update. It means a piece of software that tries to bridge tactile reading and the English language got a little less broken than it was before, quietly, without a press release or a celebrity endorser.\n\nBraille is a writing system. People forget that. It has its own contractions, its own shorthand rules, its own internal logic that does not map cleanly onto standard English spelling. Grade 2 Braille, the version most fluent readers use, compresses common words into symbols that a sighted person would never recognize. I once held a Braille page and genuinely could not tell which direction was up.\n\nSoftware that tries to translate between these two worlds has to solve a genuinely weird problem. English spelling is already a disaster — a pileup of Norman French and Anglo-Saxon and pure historical accident. Encoding that mess into dots, then writing code to move between them. Version 0.2.9 is early. That decimal point is doing a lot of heavy lifting, and the team behind it is still somewhere in the weeds, probably arguing about edge cases for words like"
+  },
+  {
     "title": "Miriam Margolyes Said the Quiet Part Out Loud, and British TV Had to Clean It Up",
     "slug": "miriam-margolyes-said-the-quiet-part-out-loud-and-british-tv-had-to-clean-it-up",
     "date": "2026-09-05",
