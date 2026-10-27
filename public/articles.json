@@ -1,5 +1,11 @@
 [
   {
+    "title": "Your Voice, Stripped Down to Code: The Browser That Listens Now",
+    "slug": "your-voice-stripped-down-to-code-the-browser-that-listens-now",
+    "date": "2026-10-27",
+    "body": "Speech recognition running inside a browser with no server involved is the kind of thing that sounds boring until you realize what it means for the English language itself. The machine is not just hearing you. It is parsing you, your accent, your slop, your run-on thoughts, and converting all of that wet messy human speech into clean typed text without ever sending your voice off to some distant corporate computer farm.\n\nI once sat next to a woman on a train who was dictating entire emails into her phone, loud, oblivious, every word going God knows where before landing back in her hand as text. She had no idea.\n\nThis browser-based stuff changes the custody chain. Your words stay local. They never leave the machine on your lap. For anyone who has ever felt vaguely uneasy about speaking freely into a device, that matters more than most tech announcements do. The English you produce, mumbled or crisp or regionally accented, gets processed right there, privately, by the same kind of AI model that the big players have been hoarding. Parakeet and Whisper doing the heavy lifting, offline, no middleman. That is a genuinely different arrangement than what most Americans are used to, and the implications for how freely people talk, what words they choose, whether they self-censor before speaking to a device"
+  },
+  {
     "title": "The UK Government Just Reminded Everyone That Plain English Can Save Your Life",
     "slug": "the-uk-government-just-reminded-everyone-that-plain-english-can-save-your-life",
     "date": "2026-10-25",
