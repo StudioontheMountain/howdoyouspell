@@ -1,5 +1,11 @@
 [
   {
+    "title": "OCR Software Is Teaching Machines to Read Worse Than a Third-Grader",
+    "slug": "ocr-software-is-teaching-machines-to-read-worse-than-a-third-grader",
+    "date": "2026-11-15",
+    "body": "Optical character recognition has been around long enough that we should have cracked it by now. We haven't. The best OCR software on the market still chokes on a water-stained receipt, a faded library card, a handwritten note from your grandmother. Decades of development and the machines still treat cursive like a ransom letter written in a foreign language.\n\nI once watched a colleague feed a typed 1970s legal document into one of these programs and get back something that looked like a cat had walked across the keyboard during a firmware update.\n\nThe deeper problem here isn't technical. The English language is a gorgeous, irregular disaster — full of ligatures, ambiguous spacing, words that look like other words when the ink bleeds just slightly into the paper. OCR has to understand not just shapes but context, meaning, the weird logic of how English actually works on a page. And most software treats every character like a standalone object, isolated, divorced from the sentence around it.\n\nSo every botched transcription is also a failure of linguistic understanding. A machine that misreads \"cl\" as \"d\" doesn't just make a typo — it breaks the word, breaks the meaning, quietly corrupts whatever record you thought you were preserving. And the software just keeps shipping"
+  },
+  {
     "title": "Murder Mystery TV Has a Language Problem, and It's Glorious",
     "slug": "murder-mystery-tv-has-a-language-problem-and-it-s-glorious",
     "date": "2026-11-13",
